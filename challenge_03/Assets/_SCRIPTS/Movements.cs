@@ -60,32 +60,14 @@ public class Movements : MonoBehaviour
 
     private void RotateSprite(){
         if (left){
-            Rotate(-90);
+            Rotate(-1);
         }else if(right){
-            Rotate(90);
-        }
-
-        if (up){
-            Rotate(-180);
-        }else if(down){
-            Rotate(180);
-        }
-
-        if (left && up){
-            Rotate(45);
-        }else if (left && down){
-            Rotate(-45);
-        }
-
-        if (right && up){
-            Rotate(145);
-        }else if (right && down){
-            Rotate(-145);
+            Rotate(1);
         }
     }
 
     private void Rotate(float angle){
-        transform.localRotation = Quaternion.Euler(0,0,angle);
+        transform.localScale = new Vector3(angle, 1.0f, 1.0f);
     }
 
     private void Movement(Vector3 direction){
